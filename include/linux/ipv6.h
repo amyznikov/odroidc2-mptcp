@@ -258,16 +258,6 @@ static inline struct ipv6_pinfo * inet6_sk(const struct sock *__sk)
 	return inet_sk(__sk)->pinet6;
 }
 
-static inline struct request_sock *inet6_reqsk_alloc(struct request_sock_ops *ops)
-{
-	struct request_sock *req = reqsk_alloc(ops);
-
-	if (req)
-		inet_rsk(req)->pktopts = NULL;
-
-	return req;
-}
-
 static inline struct raw6_sock *raw6_sk(const struct sock *sk)
 {
 	return (struct raw6_sock *)sk;
@@ -307,12 +297,6 @@ static inline int inet_v6_ipv6only(const struct sock *sk)
 #define ipv6_sk_rxinfo(sk)	0
 
 static inline struct ipv6_pinfo * inet6_sk(const struct sock *__sk)
-{
-	return NULL;
-}
-
-static inline struct inet6_request_sock *
-			inet6_rsk(const struct request_sock *rsk)
 {
 	return NULL;
 }

@@ -1398,7 +1398,7 @@ static unsigned long isolate_lru_pages(unsigned long nr_to_scan,
 				list_del(&page->lru_normal);
 			} else if (page->lru_normal.next != LIST_POISON1
 					   && !list_empty(&page->lru_normal)) {
-				pr_err("-----%s %d, %d, %p\n",
+				pr_err("-----%s %d, %lu, %p\n",
 					   __func__, __LINE__,
 					   get_pageblock_migratetype(page),
 					   page->lru_normal.next);

@@ -75,6 +75,13 @@ config ARM64
 config ARM64_HAS_SG_CHAIN
 	bool
 
+config ARCH_HAS_CPUFREQ
+	bool
+	help
+	  Internal node to signify that the ARCH has CPUFREQ support
+	  and that the relevant menu configurations are displayed for
+	  it.
+
 config 64BIT
 	def_bool y
 
